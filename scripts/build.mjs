@@ -41,6 +41,10 @@ const logger = winston.createLogger({
 
 await main();
 
+/**
+ * Main function to generate inventory and package.json
+ * @returns {Promise<void>}
+ */
 async function main() {
   const publishDate = Temporal.PlainDate.from(
     argv.date ?? Temporal.Now.zonedDateTimeISO(),
@@ -58,6 +62,10 @@ async function main() {
   copyFileSync("readme.md", "package/readme.md");
 }
 
+/**
+ * Generate the inventory JSON file
+ * @returns {Promise<void>}
+ */
 async function makeInventoryJSON() {
   const startOfDay = Temporal.PlainDate.from(
     argv.date ?? Temporal.Now.zonedDateTimeISO(),
@@ -75,7 +83,12 @@ async function makeInventoryJSON() {
   );
 }
 
-function makePackageJSON(opts: { publishDate: Temporal.ZonedDateTime }) {
+/**
+ * Generate the package.json file for the package
+ * @param {{ publishDate: Temporal.ZonedDateTime }} opts
+ * @returns {void}
+ */
+function makePackageJSON(opts) {
   const { publishDate } = opts;
 
   const { name, version, description, repository, author } = JSON.parse(

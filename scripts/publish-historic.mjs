@@ -43,6 +43,10 @@ const START_DATE = Temporal.Instant.from(
   "2023-10-01T00:00:00.000Z",
 ).toZonedDateTimeISO("UTC");
 
+/**
+ * Main function to publish historic releases
+ * @returns {void}
+ */
 function main() {
   const now = Temporal.Now.zonedDateTimeISO("UTC");
   let target = START_DATE;
@@ -63,7 +67,8 @@ function main() {
       `Attempting to publish for ${forthcomingDate} and ${forthcomingHash} as ${forthcomingVersion}`,
     );
 
-    let alreadyPublished: false | string = false;
+    /** @type {false | string} */
+    let alreadyPublished = false;
     for (const version of Object.keys(completedReleases())) {
       if (
         version.includes(forthcomingDate) ||
@@ -92,7 +97,13 @@ function main() {
   }
 }
 
-function npmRun(command: string, ...moreArgs: string[]) {
+/**
+ * Run an npm script with optional arguments
+ * @param {string} command - The npm script command to run
+ * @param {...string} moreArgs - Additional arguments to pass to the npm script
+ * @returns {void}
+ */
+function npmRun(command, ...moreArgs) {
   if (moreArgs.length > 0) {
     moreArgs.unshift("--");
   }
@@ -102,7 +113,11 @@ function npmRun(command: string, ...moreArgs: string[]) {
   });
 }
 
-function completedReleases(): Record<string, string> {
+/**
+ * Get completed releases from npm registry
+ * @returns {Record<string, string>}
+ */
+function completedReleases() {
   try {
     return JSON.parse(
       execFileSync(

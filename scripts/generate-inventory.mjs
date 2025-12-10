@@ -45,6 +45,10 @@ const logger = winston.createLogger({
 
 const destPath = relative(process.cwd(), ".mdn-content");
 
+/**
+ * Main function to generate and output inventory
+ * @returns {Promise<void>}
+ */
 async function main() {
   const inventory = new Inventory({ destPath, logger });
   try {
