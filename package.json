@@ -12,9 +12,9 @@
     "clean": "rm -f package/*.json"
   },
   "engines": {
-    "node": "^24.11.1",
-    "npm": "^11.5.1"
+    "node": "^24.11.1"
   },
+  "packageManager": "npm@11.6.2",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mdn/content-inventory.git"
