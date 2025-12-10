@@ -57,4 +57,4 @@ jobs:
       - if: ${{ ! inputs.dryRun }}
         run: npm run publish
 
-      - run: npm info @ddbeck/mdn-content-inventory
+      - run: npm info @mdn/content-inventory

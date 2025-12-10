@@ -107,7 +107,7 @@ function completedReleases(): Record<string, string> {
     return JSON.parse(
       execFileSync(
         "npm",
-        ["view", "@ddbeck/mdn-content-inventory", "time", "--json"],
+        ["view", "@mdn/content-inventory", "time", "--json"],
         { stdio: "pipe", encoding: "utf-8" },
       ),
     );

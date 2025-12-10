@@ -1,5 +1,5 @@
 {
-  "name": "@ddbeck/mdn-content-inventory",
+  "name": "@mdn/content-inventory",
   "version": "0.2.0",
   "description": "The MDN page inventory as a big JSON object.",
   "main": "src/index.mts",
@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ddbeck/mdn-content-inventory.git"
+    "url": "git+https://github.com/mdn/content-inventory.git"
   },
   "author": "Daniel D. Beck <daniel@ddbeck.com> (https://ddbeck.com)",
   "license": "Apache-2.0",
