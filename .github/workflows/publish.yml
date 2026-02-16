@@ -35,9 +35,10 @@ jobs:
       - uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903 # v6.0.0
         with:
           node-version-file: ".tool-versions"
+          check-latest: true
           registry-url: "https://registry.npmjs.org"
 
-      - run: npm install -g 'npm@>=11.5.1'  # required for trusted publishing
+      - run: npm install -g 'npm@>=11.5.1' # required for trusted publishing
 
       - run: npm ci
 
