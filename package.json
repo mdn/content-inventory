@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "lint": "npx eslint . --ignore-pattern '.mdn-content/*'",
-    "test": "npx tsc --project jsconfig.json --noEmit",
+    "test": "npx --package=typescript tsc --project jsconfig.json --noEmit",
     "build": "node scripts/build.mjs",
     "publish": "cd package && npm publish",
     "publish:dry-run": "cd package && npm publish --dry-run",
