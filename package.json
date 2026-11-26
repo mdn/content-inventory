@@ -12,10 +12,10 @@
     "publish:dry-run": "cd package && npm publish --dry-run",
     "clean": "rm -f package/*.json"
   },
+  "packageManager": "npm@11.20.0",
   "engines": {
-    "node": ">=24"
+    "node": ">=26"
   },
-  "packageManager": "npm@11.6.2",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mdn/content-inventory.git"
@@ -26,7 +26,7 @@
   "devDependencies": {
     "@eslint/js": "^9.4.0",
     "@js-temporal/polyfill": "^0.4.4",
-    "@types/node": "^24.10.3",
+    "@types/node": "^26.6.6",
     "@types/yargs": "^17.0.32",
     "eslint": "^8.57.0",
     "prettier": "^3.3.0",
